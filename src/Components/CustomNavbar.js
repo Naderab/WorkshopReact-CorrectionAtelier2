@@ -4,8 +4,12 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
 import {NavLink} from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { selectCountAll } from '../ReduxToolkit/slices/cartSlice';
 
 const CustomNavbar = () => {
+  const CartNumber = useSelector(selectCountAll);
+
   return (
     <div> <Navbar bg="light" expand="lg">
     <Container>
@@ -15,6 +19,8 @@ const CustomNavbar = () => {
         <Nav className="me-auto">
           <Nav.Link as={NavLink} to="/products/list" style={({isActive})=> ({textDecoration: isActive ? "underline" : "none"})}>Products</Nav.Link>
           <Nav.Link as={NavLink} to="/products/add" style={({isActive})=> ({textDecoration: isActive ? "underline" : "none"})}>Add new product</Nav.Link>
+          <Nav.Link as={NavLink} to="/cart" style={({isActive})=>({textDecoration:isActive && 'underline'})}>Panier ({CartNumber})</Nav.Link>
+
          </Nav>
       </Navbar.Collapse>
     </Container>

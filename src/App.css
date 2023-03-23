@@ -45,3 +45,62 @@
 @keyframes clignote {  
   50% { opacity: 0.5; }
 }
+
+media (min-width: 1025px) {
+  .h-custom {
+    height: 100vh !important;
+  }
+}
+
+
+.number-input.number-input {
+  border: 1px solid #ced4da;
+  width: 3rem;
+  border-radius: .25rem;
+}
+
+
+.shopping-cart .def-number-input.number-input {
+  border: none;
+}
+
+.RemoveCart {
+  background: white;
+  color: red;
+  font-size: 1.1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid red;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.AddItem {
+  /* Adapt the colors based on primary prop */
+  background: white;
+  color: green;
+  font-size: 1.1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid green;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.RemoveItem {
+  /* Adapt the colors based on primary prop */
+  background: white;
+  color: red;
+  font-size: 1.1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid red;
+  border-radius: 20px;
+  cursor: pointer;
+
+}
+
+.RemoveItem:hover .AddItem:hover {
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.16);
+  transform: translate(0, -5px);
+}

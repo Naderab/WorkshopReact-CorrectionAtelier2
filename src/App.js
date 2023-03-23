@@ -8,6 +8,8 @@ const ReduxToolkitComponent = lazy(() =>
 );
 
 const ReduxComponent = lazy(() => import("./Redux/ReduxComponent"));
+const Cart = lazy(() => import("./Components/Cart"));
+
 const CustomNavbar = lazy(() => import("./Components/CustomNavbar"));
 
 const Home = lazy(() => import("./Components/Home"));
@@ -37,9 +39,9 @@ function App() {
             <Route path="list" element={<Products />} />
             <Route path="add" element={<AddProduct />} />
             <Route path="update/:id" element={<UpdateProduct />} />
-
             <Route path=":id" element={<ProductDetails />} />
           </Route>
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </Suspense>
     </>

@@ -3,13 +3,18 @@ import { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { Col, Row } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { increment } from "../ReduxToolkit/slices/cartSlice";
 
 function Product(props) {
   const [product,] = useState(props.product);
   const [likes, setLikes] = useState(props.product.like);
-
+  const dispatch = useDispatch();
   const like = () => {
     setLikes(likes + 1);
+  };
+  const addToCart = (p) => {
+    dispatch(increment(p));
   };
   useEffect(() => {
     console.log("Likes Update");
@@ -38,6 +43,11 @@ function Product(props) {
             </Button>
           </Col>
           <Col md={6}>
+            <Button variant="success" size="sm" onClick={() => addToCart(product)}>
+              ADD TO CART +
+            </Button>
+          </Col>
+          {/* <Col md={6}>
             <Button
             size="sm"
               variant="primary"
@@ -46,7 +56,7 @@ function Product(props) {
             >
               Buy
             </Button>
-          </Col>
+          </Col> */}
         </Row>
         <br></br>
         <Row>
@@ -59,6 +69,7 @@ function Product(props) {
             </Col>
             
           </Row>
+         
       </Card.Body>
     </Card>
   );

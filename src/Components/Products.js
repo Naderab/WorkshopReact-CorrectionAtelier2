@@ -28,6 +28,9 @@ function Products () {
       // setProducts(res.data);
     }
     const buy=(product)=>{
+      console.log('====================================');
+      console.log(product);
+      console.log('====================================');
         product.quantity--;
         setVisible(true);
         setTimeout(()=>{setVisible(false)},2000)
